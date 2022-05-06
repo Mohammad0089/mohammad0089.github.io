@@ -1,5 +1,3 @@
-console.log("Window loaded!");
-
 (function() {
   "use strict";
   window.addEventListener("load", init);
@@ -7,7 +5,7 @@ console.log("Window loaded!");
 
   function init() {
     let encryptItButton = document.getElementById("encrypt-it");
-    encryptItButton.addEventListener("click", handleEncryptClick);
+    encryptItButton.addEventListener("click", encryption);
     let resetButton = document.getElementById("reset");
     resetButton.addEventListener("click", handleResetClick)  
 
@@ -20,15 +18,13 @@ console.log("Window loaded!");
     checkBtnCaps.addEventListener("click", allCaps) 
   }
 
-  function handleEncryptClick() {
-    console.log("Encrypt Button Clicked");
+  function encryption() {
     let textField = document.getElementById("input-text");
     let results = shiftCipher(textField);
     document.getElementById("result").textContent = results;
   }
 
   function handleResetClick() {
-    console.log("Reset Button Clicked");
     let textField = document.getElementById("input-text");
     textField.value = "";
   }
